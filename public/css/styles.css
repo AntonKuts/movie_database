@@ -29,8 +29,8 @@ margin-top: 20px;
 }
 
 h1{
-  margin-left: 50px;
-  width: 300px;
+  margin-left: 30px;
+  width: 370px;
   height: 50px;
   float: left;
 }
@@ -41,10 +41,21 @@ color: #F7FFF7;
 }
 
 .footer{
-  width: auto;
+  width: 990px;
   height: 100px;
   border: 4px outset #2F3061;
   background: #F7FFF7;
+  margin: auto;
+}
+
+.boxForInput {
+  width: 986px;
+  margin: auto;
+  border: 4px outset #2F3061;
+}
+
+input {
+  width: 99.5%;
 }
 
 .mainBox{
@@ -88,7 +99,7 @@ h3 {
 
 .cardForText {
   width: 260px;
-  height: 240px;
+  height: 235px;
   margin: auto;
   margin-top: 5px;
   overflow: hidden;
@@ -112,4 +123,18 @@ span.red {
 
 .left {
   text-align: right;
+}
+
+.buttonNew {
+  width: 298px;
+  height: 622px;
+  /*border: 2px solid black;*/
+  margin: auto;
+  margin: 15px;
+  float: left;
+  padding: 5px;
+  background: #F7FFF7;
+  border: 4px outset #2F3061;
+  font-size: 30px;
+  color: #2F3061;
 }

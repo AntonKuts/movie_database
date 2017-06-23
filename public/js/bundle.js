@@ -24940,46 +24940,42 @@
 	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'mainBox' },
+	          { className: 'footer' },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'footer' },
+	            'h1',
+	            null,
+	            '\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0444\u0438\u043B\u044C\u043C\u044B'
+	          ),
+	          _react2.default.createElement(
+	            'aside',
+	            null,
 	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'Movie_Database'
-	            ),
-	            _react2.default.createElement(
-	              'aside',
+	              'ul',
 	              null,
 	              _react2.default.createElement(
-	                'ul',
+	                'li',
 	                null,
 	                _react2.default.createElement(
-	                  'li',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: "/" },
-	                    'Home'
-	                  )
-	                ),
+	                  _reactRouter.Link,
+	                  { to: "/" },
+	                  '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
 	                _react2.default.createElement(
-	                  'li',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: "/Movies" },
-	                    'Movies'
-	                  )
+	                  _reactRouter.Link,
+	                  { to: "/Movies" },
+	                  '\u0424\u0438\u043B\u044C\u043C\u044B'
 	                )
 	              )
-	            ),
-	            _react2.default.createElement(
-	              'main',
-	              null,
-	              this.props.children
 	            )
+	          ),
+	          _react2.default.createElement(
+	            'main',
+	            null,
+	            this.props.children
 	          )
 	        )
 	      );
@@ -25031,11 +25027,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'header',
-	          null,
-	          'Serch Title'
-	        ),
+	        _react2.default.createElement('header', null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -25078,6 +25070,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -25101,7 +25095,25 @@
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 	      post: [],
 	      loading: true,
-	      error: null
+	      error: null,
+	      counter: 2
+	    }, _this.new = function (event) {
+	      var counter = _this.state.counter;
+	      console.log('counter: ', counter);
+	      _this.setState({ counter: _this.state.counter + 1 });
+	      _axios2.default.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=' + counter).then(function (res) {
+	        _this.setState({
+	          post: [].concat(_toConsumableArray(_this.state.post), _toConsumableArray(res.data.results)),
+	          loading: false,
+	          error: null
+	        });
+	      }).catch(function (err) {
+	        _this.setState({
+	          loding: false,
+	          error: err
+	        });
+	      });
+	      console.log(event);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
@@ -25157,6 +25169,11 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainBox' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'boxForInput' },
+	          _react2.default.createElement('input', { type: 'text', name: '', value: '', placeholder: '\u041F\u043E\u0438\u0441\u043A \u0444\u0438\u043B\u044C\u043C\u0430' })
+	        ),
 	        post.map(function (post) {
 	          return _react2.default.createElement(
 	            'div',
@@ -25205,7 +25222,12 @@
 	              )
 	            )
 	          );
-	        })
+	        }),
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'buttonNew', type: 'button', name: 'button', onClick: this.new },
+	          '\u0411\u043E\u043B\u044C\u0448\u0435 \u0444\u0438\u043B\u044C\u043C\u043E\u0432...'
+	        )
 	      );
 	    }
 	  }, {
@@ -25220,7 +25242,7 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Movies'
+	          '\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0444\u0438\u043B\u044C\u043C\u044B'
 	        ),
 	        loding ? this.renderLoding() : this.renderPosts()
 	      );

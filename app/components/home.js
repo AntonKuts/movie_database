@@ -6,12 +6,13 @@ export default class Home extends Component {
   state = {
     post: [],
     loading: true,
-    error:null,
+    error: null,
+    counter: 2
   }
 
 
-    componentDidMount() {
-      axios.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=1')
+    componentDidMount(){
+      axios.get(`http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=1`)
         .then(res =>{
           this.setState({
             post: res.data.results,
@@ -25,6 +26,27 @@ export default class Home extends Component {
         });
       })
     }
+
+    new = (event) => {
+      let counter = this.state.counter;
+      console.log('counter: ', counter);
+      this.setState({counter: this.state.counter + 1});
+      axios.get(`http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=${counter}`)
+      .then(res =>{
+        this.setState({
+          post: [...this.state.post, ...res.data.results],
+          loading: false,
+          error: null
+        })
+      }).catch(err =>{
+        this.setState({
+          loding: false,
+          error: err
+        });
+      })
+      console.log(event);
+    }
+
 
     renderLoding(){
       return (
@@ -47,7 +69,11 @@ export default class Home extends Component {
 
   console.log({post});
       return (
+
         <div className="mainBox">
+          <div className="boxForInput">
+            <input type="text" name="" value="" placeholder="Поиск фильма"/>
+          </div>
           {post.map(post => (
             <div key={post.id} className="card">
               <img className="img1" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${post.poster_path}`} alt="#"/>
@@ -66,6 +92,7 @@ export default class Home extends Component {
             </div>
           )
         )}
+        <button className="buttonNew" type="button" name="button" onClick={this.new}>Больше фильмов...</button>
         </div>
       );
     }
@@ -74,7 +101,7 @@ export default class Home extends Component {
 
       return (
         <div>
-          <h2>Movies</h2>
+          <h2>Популярные фильмы</h2>
           {loding ? this.renderLoding():this.renderPosts()}
         </div>
       );

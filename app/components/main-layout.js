@@ -5,13 +5,12 @@ export default class MainLayout extends Component {
   render() {
     return(
     <div>
-      <div className="mainBox">
        <div className="footer">
-        <h1>Movie_Database</h1>
+        <h1>Популярные фильмы</h1>
           <aside>
             <ul>
-              <li><Link to={"/"}>Home</Link></li>
-              <li><Link to={"/Movies"}>Movies</Link></li>
+              <li><Link to={"/"}>Главная</Link></li>
+              <li><Link to={"/Movies"}>Фильмы</Link></li>
             </ul>
           </aside>
           <main>
@@ -19,7 +18,6 @@ export default class MainLayout extends Component {
           </main>
         </div>
       </div>
-    </div>
     );
   }
 };
