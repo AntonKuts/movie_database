@@ -5,6 +5,7 @@ import MainLayout from './components/main-layout';
 import SearchLayout from './components/search-layout';
 
 import Home from './components/home';
+import Film from './components/film';
 import Movies from './components/movies_old';
 
 
@@ -21,6 +22,12 @@ export default (
       <Route path="/Movies">
         <Route component={SearchLayout}>
           <IndexRoute component={Movies}/>
+        </Route>
+      </Route>
+
+      <Route path="/Film">
+        <Route component={SearchLayout}>
+          <IndexRoute component={Film}/>
         </Route>
       </Route>
 

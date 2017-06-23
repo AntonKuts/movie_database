@@ -11,6 +11,7 @@ export default class MainLayout extends Component {
             <ul>
               <li><Link to={"/"}>Главная</Link></li>
               <li><Link to={"/Movies"}>Фильмы</Link></li>
+              <li><Link to={"/Film"}>Один фильм</Link></li>
             </ul>
           </aside>
           <main>

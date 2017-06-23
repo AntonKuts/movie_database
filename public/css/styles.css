@@ -25,7 +25,6 @@ h1, h2, h5{
 h2{
 text-align: center;
 color: #F7FFF7;
-margin-top: 20px;
 }
 
 h1{
@@ -99,7 +98,7 @@ h3 {
 
 .cardForText {
   width: 260px;
-  height: 235px;
+  height: 232px;
   margin: auto;
   margin-top: 5px;
   overflow: hidden;

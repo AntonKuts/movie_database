@@ -8,7 +8,7 @@ export default class Home extends Component {
     loading: true,
     error: null,
     counter: 2,
-    titles: [],
+    ids: [],
     searchString: '',
     newTitles: ''
   }
@@ -16,12 +16,12 @@ export default class Home extends Component {
     componentDidMount(){
       axios.get(`http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=1`)
         .then(res =>{
-          let _titles = [...this.state.posts, ...res.data.results].map(item => item.title);
+          let _ids = [...this.state.posts, ...res.data.results].map(item => item.id);
 
           // console.log(res);
           this.setState({
             posts: [...res.data.results],
-            titles: _titles,
+            ids: _ids,
             loading: false,
             error: null
           })
@@ -33,8 +33,7 @@ export default class Home extends Component {
       })
     }
 
-    new = (e) => {
-      this.setState({foundedItems: null});
+    new = () => {
       let counter = this.state.counter;
       console.log('counter: ', counter);
       this.setState({counter: this.state.counter + 1});
@@ -52,7 +51,6 @@ export default class Home extends Component {
           error: err
         });
       })
-      e.target.value='';
     }
 
 
@@ -68,35 +66,31 @@ export default class Home extends Component {
         <div>Something went wrong {this.state.error.message}</div>
       )
     }
-    handleChange = (e) => {
-      this.setState({
-        searchString: e.target.value
-      });
-
-      let search = null; //this.state.titles;
-      const searchString = this.state.searchString.trim().toLowerCase();
-
-       if (searchString.length > 0){
-         search = this.state.posts.filter(function(item){
-           if(item.title.toLowerCase().match( searchString )) return item;
-         });
-       }
-       this.setState({foundedItems: search });
-
-    }
-
     renderPosts(){
-      const {error} = this.state;
+      const {error, posts} = this.state;
       if(error){
     return this.renderError;
       }
 
-      let posts = this.state.foundedItems ? this.state.foundedItems : this.state.posts;
+      handleChange = () => {
+        this.setState({
+          searchString: e.target.value
+        });
+      }
+
+        let search = this.state.titles;
+        const searchString = this.state.searchString.trim().toLowerCase();
+
+             if (searchString.length > 0){
+               search = search.filter(function(newTitles){
+                 return newTitles.toLowerCase().match( searchString );
+               });
+             }
 
 
-    // console.log(posts);
-    // console.log(this.state.titles);
-    // console.log(this.state.newTitles);
+    console.log(posts);
+    console.log(this.state.ids);
+    console.log(this.state.newTitles);
       return (
         <div className="mainBox">
           <div className="boxForInput">
