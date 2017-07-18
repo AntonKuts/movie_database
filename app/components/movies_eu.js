@@ -11,7 +11,7 @@ state = {
 
 
   componentDidMount() {
-    axios.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=1')
+    axios.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=eu-EU&page=1')
       .then(res =>{
         this.setState({
           post: res.data.results,
@@ -47,15 +47,15 @@ state = {
     return (
       <div className="mainBox" >
         {post.map(post => (
-          <div key={post.id} className="card">
+          <div key={post.id} className="card_eu">
             <img className="img1" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${post.poster_path}`} alt="#"/>
             <h3>{post.title}</h3>
             <div className="cardForText">
-              <div className="cardForTextSmall1">
-                <h4>Язык: {post.original_language}</h4>
+              <div className="cardForTextSmall1_eu">
+                <h4>language: {post.original_language}</h4>
               </div>
-              <div className="cardForTextSmall2">
-                <h4 className="left">Рейтинг: <span className="red">{post.vote_average}</span></h4>
+              <div className="cardForTextSmall2_eu">
+                <h4 className="left">vote average: <span className="red">{post.vote_average}</span></h4>
               </div>
                 <div>
                   <p className="pForText">{post.overview}</p>

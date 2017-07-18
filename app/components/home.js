@@ -93,10 +93,6 @@ export default class Home extends Component {
 
       let posts = this.state.foundedItems ? this.state.foundedItems : this.state.posts;
 
-
-    // console.log(posts);
-    // console.log(this.state.titles);
-    // console.log(this.state.newTitles);
       return (
         <div className="mainBox">
           <div className="boxForInput">
@@ -107,11 +103,11 @@ export default class Home extends Component {
               <img className="img1" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${post.poster_path}`} alt="#"/>
               <h3>{post.title}</h3>
               <div className="cardForText">
-                <div className="cardForTextSmall1">
+                <div className="cardForTextSmall1_eu">
                   <h4>Язык: {post.original_language}</h4>
                 </div>
                 <div className="cardForTextSmall2">
-                  <h4 className="left1">Рейтинг: <span className="red">{post.vote_average}</span></h4>
+                  <h4 className="left">Рейтинг: <span className="red">{post.vote_average}</span></h4>
                 </div>
                   <div>
                     <p className="pForText">{post.overview}</p>
@@ -129,7 +125,7 @@ export default class Home extends Component {
 
       return (
         <div>
-          <h2>Популярные фильмы</h2>
+          <h2>.</h2>
           {loding ? this.renderLoding():this.renderPosts()}
         </div>
       );

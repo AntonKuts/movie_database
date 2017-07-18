@@ -76,6 +76,32 @@ input {
   border: 4px outset #2F3061;
 }
 
+.card_eu{
+  width: 280px;
+  height: 420px;
+  /*border: 2px solid black;*/
+  margin: auto;
+  margin: 15px;
+  float: left;
+  padding: 5px;
+  background: #F7FFF7;
+  border: 4px outset #2F3061;
+}
+
+
+.card_small{
+  width: 280px;
+  height: 605px;
+  /*border: 2px solid black;*/
+  margin: auto;
+  margin: 15px;
+  float: left;
+  padding: 5px;
+  background: #F7FFF7;
+  border: 4px outset #2F3061;
+}
+
+
 .img1{
   margin-left: 45px;
   margin-top: 10px;
@@ -110,8 +136,20 @@ h3 {
   float: left;
 }
 
+.cardForTextSmall1_eu {
+  width: 90px;
+  height: auto;
+  float: left;
+}
+
 .cardForTextSmall2 {
   width: 90px;
+  height: auto;
+  float: right;
+}
+
+.cardForTextSmall2_eu {
+  width: 165px;
   height: auto;
   float: right;
 }

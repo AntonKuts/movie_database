@@ -9,9 +9,9 @@ export default class MainLayout extends Component {
         <h1>Популярные фильмы</h1>
           <aside>
             <ul>
-              <li><Link to={"/"}>Главная</Link></li>
-              <li><Link to={"/Movies"}>Фильмы</Link></li>
-              <li><Link to={"/Film"}>Один фильм</Link></li>
+              <li><Link to={"/"}>Самые популярные фильмы</Link></li>
+              <li><Link to={"/Movies"}>Поиск и больше фильмов </Link></li>
+              <li><Link to={"/MoviesEU"}>English version</Link></li>
             </ul>
           </aside>
           <main>

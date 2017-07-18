@@ -5,8 +5,8 @@ import MainLayout from './components/main-layout';
 import SearchLayout from './components/search-layout';
 
 import Home from './components/home';
-import Film from './components/film';
 import Movies from './components/movies_old';
+import MoviesEU from './components/movies_eu';
 
 
 export default (
@@ -15,19 +15,19 @@ export default (
 
       <Route path="/">
         <Route component={SearchLayout}>
-          <IndexRoute component={Home}/>
+          <IndexRoute component={Movies}/>
         </Route>
       </Route>
 
       <Route path="/Movies">
         <Route component={SearchLayout}>
-          <IndexRoute component={Movies}/>
+          <IndexRoute component={Home}/>
         </Route>
       </Route>
 
-      <Route path="/Film">
+      <Route path="/MoviesEU">
         <Route component={SearchLayout}>
-          <IndexRoute component={Film}/>
+          <IndexRoute component={MoviesEU}/>
         </Route>
       </Route>
 
@@ -35,5 +35,3 @@ export default (
 
   </Router>
   )
-
-  // https://www.googleapis.com/books/v1/volumes?q=Harry&key=AIzaSyBLIp4pinwhaybKrnXhTwqNRgRySwfaPoA

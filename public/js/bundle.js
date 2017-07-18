@@ -19782,13 +19782,13 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _film = __webpack_require__(246);
-	
-	var _film2 = _interopRequireDefault(_film);
-	
-	var _movies_old = __webpack_require__(247);
+	var _movies_old = __webpack_require__(246);
 	
 	var _movies_old2 = _interopRequireDefault(_movies_old);
+	
+	var _movies_eu = __webpack_require__(247);
+	
+	var _movies_eu2 = _interopRequireDefault(_movies_eu);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -19804,7 +19804,7 @@
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { component: _searchLayout2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default })
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _movies_old2.default })
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -19813,22 +19813,20 @@
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { component: _searchLayout2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _movies_old2.default })
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default })
 	      )
 	    ),
 	    _react2.default.createElement(
 	      _reactRouter.Route,
-	      { path: '/Film' },
+	      { path: '/MoviesEU' },
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { component: _searchLayout2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _film2.default })
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _movies_eu2.default })
 	      )
 	    )
 	  )
 	);
-	
-	// https://www.googleapis.com/books/v1/volumes?q=Harry&key=AIzaSyBLIp4pinwhaybKrnXhTwqNRgRySwfaPoA
 
 /***/ }),
 /* 160 */
@@ -24971,7 +24969,7 @@
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: "/" },
-	                  '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
+	                  '\u0421\u0430\u043C\u044B\u0435 \u043F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0444\u0438\u043B\u044C\u043C\u044B'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -24980,7 +24978,7 @@
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
 	                  { to: "/Movies" },
-	                  '\u0424\u0438\u043B\u044C\u043C\u044B'
+	                  '\u041F\u043E\u0438\u0441\u043A \u0438 \u0431\u043E\u043B\u044C\u0448\u0435 \u0444\u0438\u043B\u044C\u043C\u043E\u0432 '
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -24988,8 +24986,8 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: "/Film" },
-	                  '\u041E\u0434\u0438\u043D \u0444\u0438\u043B\u044C\u043C'
+	                  { to: "/MoviesEU" },
+	                  'English version'
 	                )
 	              )
 	            )
@@ -25214,9 +25212,6 @@
 	
 	      var posts = this.state.foundedItems ? this.state.foundedItems : this.state.posts;
 	
-	      // console.log(posts);
-	      // console.log(this.state.titles);
-	      // console.log(this.state.newTitles);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainBox' },
@@ -25240,7 +25235,7 @@
 	              { className: 'cardForText' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'cardForTextSmall1' },
+	                { className: 'cardForTextSmall1_eu' },
 	                _react2.default.createElement(
 	                  'h4',
 	                  null,
@@ -25253,7 +25248,7 @@
 	                { className: 'cardForTextSmall2' },
 	                _react2.default.createElement(
 	                  'h4',
-	                  { className: 'left1' },
+	                  { className: 'left' },
 	                  '\u0420\u0435\u0439\u0442\u0438\u043D\u0433: ',
 	                  _react2.default.createElement(
 	                    'span',
@@ -25293,7 +25288,7 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          '\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0444\u0438\u043B\u044C\u043C\u044B'
+	          '.'
 	        ),
 	        loding ? this.renderLoding() : this.renderPosts()
 	      );
@@ -26857,243 +26852,6 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Home = function (_Component) {
-	  _inherits(Home, _Component);
-	
-	  function Home() {
-	    var _ref;
-	
-	    var _temp, _this, _ret;
-	
-	    _classCallCheck(this, Home);
-	
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-	
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      posts: [],
-	      loading: true,
-	      error: null,
-	      counter: 2,
-	      ids: [],
-	      searchString: '',
-	      newTitles: ''
-	    }, _this.new = function () {
-	      var counter = _this.state.counter;
-	      console.log('counter: ', counter);
-	      _this.setState({ counter: _this.state.counter + 1 });
-	      _axios2.default.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=' + counter).then(function (res) {
-	        _this.setState({
-	          posts: [].concat(_toConsumableArray(_this.state.posts), _toConsumableArray(res.data.results)),
-	          titles: [].concat(_toConsumableArray(_this.state.posts), _toConsumableArray(res.data.results)).map(function (item) {
-	            return item.title;
-	          }),
-	          loading: false,
-	          error: null
-	        });
-	      }).catch(function (err) {
-	        _this.setState({
-	          loding: false,
-	          error: err
-	        });
-	      });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-	
-	  _createClass(Home, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this2 = this;
-	
-	      _axios2.default.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=ru-RU&page=1').then(function (res) {
-	        var _ids = [].concat(_toConsumableArray(_this2.state.posts), _toConsumableArray(res.data.results)).map(function (item) {
-	          return item.id;
-	        });
-	
-	        // console.log(res);
-	        _this2.setState({
-	          posts: [].concat(_toConsumableArray(res.data.results)),
-	          ids: _ids,
-	          loading: false,
-	          error: null
-	        });
-	      }).catch(function (err) {
-	        _this2.setState({
-	          loding: false,
-	          error: err
-	        });
-	      });
-	    }
-	  }, {
-	    key: 'renderLoding',
-	    value: function renderLoding() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'loading...'
-	      );
-	    }
-	  }, {
-	    key: 'renderError',
-	    value: function renderError() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'Something went wrong ',
-	        this.state.error.message
-	      );
-	    }
-	  }, {
-	    key: 'renderPosts',
-	    value: function renderPosts() {
-	      var _this3 = this;
-	
-	      var _state = this.state,
-	          error = _state.error,
-	          posts = _state.posts;
-	
-	      if (error) {
-	        return this.renderError;
-	      }
-	
-	      handleChange = function handleChange() {
-	        _this3.setState({
-	          searchString: e.target.value
-	        });
-	      };
-	
-	      var search = this.state.titles;
-	      var searchString = this.state.searchString.trim().toLowerCase();
-	
-	      if (searchString.length > 0) {
-	        search = search.filter(function (newTitles) {
-	          return newTitles.toLowerCase().match(searchString);
-	        });
-	      }
-	
-	      console.log(posts);
-	      console.log(this.state.ids);
-	      console.log(this.state.newTitles);
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'mainBox' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'boxForInput' },
-	          _react2.default.createElement('input', { type: 'text', value: this.state.searchString, onChange: this.handleChange, placeholder: '\u041F\u043E\u0438\u0441\u043A \u0444\u0438\u043B\u044C\u043C\u0430' })
-	        ),
-	        posts.map(function (post) {
-	          return _react2.default.createElement(
-	            'div',
-	            { key: post.id, className: 'card' },
-	            _react2.default.createElement('img', { className: 'img1', src: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/' + post.poster_path, alt: '#' }),
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              post.title
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'cardForText' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'cardForTextSmall1' },
-	                _react2.default.createElement(
-	                  'h4',
-	                  null,
-	                  '\u042F\u0437\u044B\u043A: ',
-	                  post.original_language
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'cardForTextSmall2' },
-	                _react2.default.createElement(
-	                  'h4',
-	                  { className: 'left1' },
-	                  '\u0420\u0435\u0439\u0442\u0438\u043D\u0433: ',
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'red' },
-	                    post.vote_average
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                  'p',
-	                  { className: 'pForText' },
-	                  post.overview
-	                )
-	              )
-	            )
-	          );
-	        }),
-	        _react2.default.createElement(
-	          'button',
-	          { className: 'buttonNew', type: 'button', name: 'button', onClick: this.new },
-	          '\u0411\u043E\u043B\u044C\u0448\u0435 \u0444\u0438\u043B\u044C\u043C\u043E\u0432...'
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var loding = this.state.loding;
-	
-	
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          '\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0444\u0438\u043B\u044C\u043C\u044B'
-	        ),
-	        loding ? this.renderLoding() : this.renderPosts()
-	      );
-	    }
-	  }]);
-	
-	  return Home;
-	}(_react.Component);
-	
-	exports.default = Home;
-	;
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _axios = __webpack_require__(220);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -27169,7 +26927,6 @@
 	        return this.renderError;
 	      }
 	
-	      console.log({ post: post });
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainBox' },
@@ -27201,7 +26958,7 @@
 	                { className: 'cardForTextSmall2' },
 	                _react2.default.createElement(
 	                  'h4',
-	                  { className: 'left1' },
+	                  { className: 'left' },
 	                  '\u0420\u0435\u0439\u0442\u0438\u043D\u0433: ',
 	                  _react2.default.createElement(
 	                    'span',
@@ -27236,7 +26993,183 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Movies'
+	          '..'
+	        ),
+	        loding ? this.renderLoding() : this.renderPosts()
+	      );
+	    }
+	  }]);
+	
+	  return Movies;
+	}(_react.Component);
+	
+	exports.default = Movies;
+	;
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _axios = __webpack_require__(220);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Movies = function (_Component) {
+	  _inherits(Movies, _Component);
+	
+	  function Movies() {
+	    var _ref;
+	
+	    var _temp, _this, _ret;
+	
+	    _classCallCheck(this, Movies);
+	
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Movies.__proto__ || Object.getPrototypeOf(Movies)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      post: [],
+	      loading: true,
+	      error: null
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+	
+	  _createClass(Movies, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      _axios2.default.get('http://api.themoviedb.org/3/movie/popular?api_key=49a5dbae3f8c8632aba8f07513a7cbb2&language=eu-EU&page=1').then(function (res) {
+	        _this2.setState({
+	          post: res.data.results,
+	          loading: false,
+	          error: null
+	        });
+	      }).catch(function (err) {
+	        _this2.setState({
+	          loding: false,
+	          error: err
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'renderLoding',
+	    value: function renderLoding() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'loading...'
+	      );
+	    }
+	  }, {
+	    key: 'renderError',
+	    value: function renderError() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Something went wrong ',
+	        this.stste.error.message
+	      );
+	    }
+	  }, {
+	    key: 'renderPosts',
+	    value: function renderPosts() {
+	      var _state = this.state,
+	          error = _state.error,
+	          post = _state.post;
+	
+	      if (error) {
+	        return this.renderError;
+	      }
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'mainBox' },
+	        post.map(function (post) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: post.id, className: 'card_eu' },
+	            _react2.default.createElement('img', { className: 'img1', src: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/' + post.poster_path, alt: '#' }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              post.title
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'cardForText' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'cardForTextSmall1_eu' },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'language: ',
+	                  post.original_language
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'cardForTextSmall2_eu' },
+	                _react2.default.createElement(
+	                  'h4',
+	                  { className: 'left' },
+	                  'vote average: ',
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'red' },
+	                    post.vote_average
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                  'p',
+	                  { className: 'pForText' },
+	                  post.overview
+	                )
+	              )
+	            )
+	          );
+	        })
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var loding = this.state.loding;
+	
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          '..'
 	        ),
 	        loding ? this.renderLoding() : this.renderPosts()
 	      );
